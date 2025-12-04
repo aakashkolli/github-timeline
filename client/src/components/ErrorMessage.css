@@ -1,0 +1,250 @@
+.error-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: white;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  box-shadow: var(--color-shadow-large);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .error-container {
+  background: var(--github-gray-medium);
+  border-color: #dc2626;
+}
+
+.error-content {
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.error-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.error-details {
+  flex: 1;
+}
+
+.error-title {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #dc2626;
+}
+
+.error-message {
+  margin: 0 0 1rem 0;
+  color: var(--github-text);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.error-suggestion {
+  margin: 0 0 1rem 0;
+  color: var(--github-gray-dark);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.error-context {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  color: #991b1b;
+  margin-top: 1rem;
+}
+
+[data-theme="dark"] .error-context {
+  background: #450a0a;
+  border-color: #dc2626;
+  color: #fca5a5;
+}
+
+.error-actions {
+  border-top: 1px solid #fecaca;
+  padding: 1.5rem 2rem;
+  background: #fefefe;
+}
+
+[data-theme="dark"] .error-actions {
+  background: #1f1f23;
+  border-color: #dc2626;
+}
+
+.retry-button {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  margin-bottom: 1.5rem;
+}
+
+.retry-button:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+}
+
+.retry-icon {
+  font-size: 1rem;
+  animation: rotate 0.5s ease-in-out;
+}
+
+.retry-button:hover .retry-icon {
+  animation: rotate 0.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-tips {
+  border-top: 1px solid var(--github-border);
+  padding-top: 1.5rem;
+}
+
+.error-tips h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.95rem;
+  color: var(--github-text);
+  font-weight: 600;
+}
+
+.error-tips ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--github-gray-dark);
+}
+
+.error-tips li {
+  margin-bottom: 0.5rem;
+  color: var(--github-gray-dark);
+  font-size: 0.9rem;
+}
+
+/* Server suggestions */
+.server-suggestions {
+  background: var(--color-attention-subtle);
+  border: 1px solid var(--color-attention-muted);
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.server-suggestions h5 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-fg-default);
+}
+
+.server-suggestions ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.server-suggestions li {
+  margin-bottom: 0.375rem;
+  color: var(--color-fg-muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.server-suggestions li:last-child {
+  margin-bottom: 0;
+}
+
+/* Rate limit info */
+.rate-limit-info {
+  background: var(--color-canvas-subtle);
+  border: 1px solid var(--color-border-default);
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--color-fg-muted);
+}
+
+.error-tips li:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .error-container {
+    margin: 1rem;
+  }
+
+  .error-content {
+    padding: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .error-icon {
+    font-size: 2.5rem;
+    align-self: center;
+  }
+
+  .error-title {
+    font-size: 1.25rem;
+  }
+
+  .error-actions {
+    padding: 1rem 1.5rem;
+  }
+
+  .retry-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-content {
+    padding: 1rem;
+  }
+
+  .error-icon {
+    font-size: 2rem;
+  }
+
+  .error-title {
+    font-size: 1.1rem;
+  }
+
+  .error-message,
+  .error-suggestion {
+    font-size: 0.9rem;
+  }
+
+  .error-actions {
+    padding: 0.75rem 1rem;
+  }
+
+  .error-tips li {
+    font-size: 0.85rem;
+  }
+}

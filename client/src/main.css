@@ -1,0 +1,100 @@
+/* Common condensed styles for StatItem, LanguagePill, LoadingSpinner, ErrorMessage */
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-fg-default);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--color-fg-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.language-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  background: var(--color-canvas-subtle);
+  border: 1px solid var(--color-border-muted);
+  border-radius: 16px;
+  font-size: 0.875rem;
+  color: var(--color-fg-default);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.language-pill:hover {
+  background: var(--color-canvas-default);
+  border-color: var(--color-border-default);
+}
+.language-name {
+  white-space: nowrap;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 2rem;
+  text-align: center;
+}
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 500px;
+}
+.spinner-wrapper {
+  position: relative;
+}
+
+.error-message {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: white;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  box-shadow: var(--color-shadow-large);
+  overflow: hidden;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+[data-theme="dark"] .error-message {
+  background: var(--github-gray-medium);
+  border-color: #dc2626;
+}
+.error-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+.error-details h3 {
+  margin: 0 0 0.5rem 0;
+}
+.error-details p {
+  margin: 0.25rem 0;
+}
+.error-details button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background: var(--color-btn-primary-bg);
+  color: var(--color-btn-primary-fg);
+  font-weight: 600;
+  cursor: pointer;
+}

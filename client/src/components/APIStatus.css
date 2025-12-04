@@ -1,0 +1,147 @@
+/* API Status Component */
+.api-status {
+  background: var(--color-canvas-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin: 1rem auto 1.5rem auto;
+  max-width: 500px;
+  transition: all 0.2s ease;
+}
+
+.api-status.warning {
+  background: var(--color-canvas-default);
+  border-color: var(--color-border-default);
+}
+
+.api-status.critical {
+  background: var(--color-canvas-default);
+  border-color: var(--color-border-default);
+}
+
+/* Removed pulse animation */
+
+.api-status-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.api-status-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.api-status-icon {
+  font-size: 1.1rem;
+}
+
+.api-status-title {
+  font-weight: 600;
+  color: var(--color-fg-default);
+  font-size: 0.85rem;
+}
+
+.api-status-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.api-usage-bar {
+  height: 6px;
+  background: var(--color-neutral-muted);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.api-usage-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.api-usage-fill.normal {
+  background: linear-gradient(90deg, var(--color-success-emphasis), var(--color-accent-emphasis));
+}
+
+.api-usage-fill.warning {
+  background: linear-gradient(90deg, var(--color-attention-emphasis), var(--color-severe-emphasis));
+}
+
+.api-usage-fill.critical {
+  background: linear-gradient(90deg, var(--color-danger-emphasis), var(--color-severe-emphasis));
+}
+
+.api-status-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.api-requests-remaining {
+  color: var(--color-fg-default);
+  font-weight: 500;
+}
+
+.api-reset-time {
+  color: var(--color-fg-muted);
+  font-size: 0.8rem;
+}
+
+.api-status-warning {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border-radius: 6px;
+  color: #d73a49;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .api-status {
+    margin: 1rem 0.75rem 1.5rem 0.75rem;
+    padding: 0.875rem 1rem;
+  }
+
+  .api-status-text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .api-status-title {
+    font-size: 0.85rem;
+  }
+
+  .api-requests-remaining {
+    font-size: 0.8rem;
+  }
+
+  .api-reset-time {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .api-status {
+    margin: 0.75rem 0.5rem 1.25rem 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .api-status-header {
+    gap: 0.375rem;
+  }
+
+  .api-status-icon {
+    font-size: 1rem;
+  }
+}

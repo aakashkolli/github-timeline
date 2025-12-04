@@ -1,0 +1,232 @@
+/* Developer Profile - Subtractive Design */
+.developer-profile {
+  background: var(--color-canvas-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--color-shadow-small);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
+.profile-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Left Column: Identity & Stats */
+.profile-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border-default);
+  object-fit: cover;
+}
+
+.profile-username {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-fg-default);
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+/* Activity Metrics - Borderless Stat Row */
+.activity-metrics {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-fg-default);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--color-fg-muted);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Right Column: Stack & Focus */
+.profile-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section-title {
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-fg-muted);
+  letter-spacing: 0.02em;
+}
+
+/* Language Pills - Cloud of tags */
+.languages-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.language-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.language-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  background: var(--color-canvas-subtle);
+  border: 1px solid var(--color-border-muted);
+  border-radius: 16px;
+  font-size: 0.875rem;
+  color: var(--color-fg-default);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.language-pill:hover {
+  background: var(--color-canvas-default);
+  border-color: var(--color-border-default);
+}
+
+.language-dot {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.language-name {
+  white-space: nowrap;
+}
+
+/* Focus Areas - Simple list */
+.focus-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.focus-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.focus-list li {
+  padding: 0.5rem 0;
+  color: var(--color-fg-default);
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.focus-list li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .developer-profile {
+    padding: 1.5rem;
+  }
+
+  .profile-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .activity-metrics {
+    gap: 1rem;
+  }
+
+  .stat-value {
+    font-size: 1.75rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .developer-profile {
+    padding: 1rem;
+  }
+
+  .profile-avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .profile-username {
+    font-size: 1.125rem;
+  }
+
+  .activity-metrics {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stat-item {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background: var(--color-canvas-subtle);
+    border-radius: 6px;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .language-pills {
+    gap: 0.375rem;
+  }
+
+  .language-pill {
+    padding: 0.25rem 0.625rem;
+    font-size: 0.8rem;
+  }
+
+  .language-dot {
+    width: 8px;
+    height: 8px;
+  }
+}

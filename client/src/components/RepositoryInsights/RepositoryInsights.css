@@ -1,0 +1,444 @@
+/* Repository Insights Component */
+.repository-insights {
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.insights-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.language-name {
+  font-weight: 500;
+  color: var(--color-fg-default);
+  font-size: 0.875rem;
+}
+
+.language-icon-display {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.language-icon.emoji-icon {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+}
+
+.language-icon.text-icon {
+  background: var(--color-accent-emphasis);
+  color: var(--color-fg-on-emphasis);
+  padding: 0.125rem 0.25rem;
+  border-radius: 3px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.insights-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-fg-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.insights-icon {
+  font-size: 1.5rem;
+}
+
+.insights-subtitle {
+  margin: 0;
+  color: var(--color-fg-muted);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Insights Grid Layout */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Base Insight Card */
+.insight-card {
+  background: var(--color-canvas-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--color-shadow-small);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.insight-card:hover {
+  border-color: var(--color-accent-emphasis);
+  box-shadow: var(--color-shadow-medium);
+  transform: translateY(-2px);
+  background: var(--color-canvas-default) !important;
+}
+
+.card-title {
+  margin: 0 0 1.25rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-fg-default);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.card-icon {
+  font-size: 1rem;
+}
+
+/* Overview Card */
+.overview-card {
+  grid-column: 1 / -1;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: transparent;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.stat-item:hover {
+  background: var(--color-canvas-subtle);
+}
+
+.stat-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent-emphasis);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--color-fg-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Languages Card */
+.languages-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.language-item {
+  margin-bottom: 1rem;
+}
+
+.language-item:last-child {
+  margin-bottom: 0;
+}
+
+.language-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.language-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.language-name {
+  font-weight: 600;
+  color: var(--color-fg-default);
+  font-size: 0.9rem;
+}
+
+.language-icon-display {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.language-count {
+  font-size: 0.8rem;
+  color: var(--color-fg-muted);
+}
+
+.language-bar {
+  height: 8px;
+  background: var(--color-canvas-subtle);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.language-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* GitHub Language Colors */
+.language-javascript { background-color: #f1e05a; }
+.language-typescript { background-color: #3178c6; }
+.language-python { background-color: #3572A5; }
+.language-java { background-color: #b07219; }
+.language-css { background-color: #563d7c; }
+.language-html { background-color: #e34c26; }
+.language-go { background-color: #00ADD8; }
+.language-rust { background-color: #dea584; }
+.language-php { background-color: #4F5D95; }
+.language-ruby { background-color: #701516; }
+.language-swift { background-color: #fa7343; }
+.language-kotlin { background-color: #A97BFF; }
+.language-dart { background-color: #00B4AB; }
+.language-shell { background-color: #89e051; }
+.language-c { background-color: #555555; }
+.language-cpp { background-color: #f34b7d; }
+.language-csharp { background-color: #239120; }
+.language-vue { background-color: #4FC08D; }
+.language-react { background-color: #61DAFB; }
+
+/* Activity Card */
+.activity-stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-label {
+  font-size: 0.9rem;
+  color: var(--color-fg-muted);
+  font-weight: 500;
+}
+
+.activity-value {
+  font-weight: 600;
+  color: var(--color-accent-emphasis);
+  font-size: 0.95rem;
+}
+
+/* Top Repositories Card */
+.top-repos-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-repo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--color-canvas-subtle);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  margin-bottom: 1rem;
+  min-height: fit-content;
+  border: 1.5px solid var(--color-border-default);
+}
+
+.top-repo-item:last-child {
+  margin-bottom: 0;
+}
+
+.top-repo-item:hover {
+  background: var(--color-canvas-subtle) !important;
+  border-color: var(--color-accent-emphasis);
+  transform: translateX(4px);
+}
+
+.repo-rank {
+  font-weight: 700;
+  color: var(--color-accent-emphasis);
+  font-size: 1.25rem;
+  min-width: 2rem;
+  text-align: center;
+}
+
+.repo-details {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.repo-name {
+  color: var(--color-accent-emphasis);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  display: block;
+}
+
+.repo-name:hover {
+  color: var(--color-accent-fg);
+  text-decoration: underline;
+}
+
+.repo-description {
+  margin: 0;
+  color: var(--color-fg-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.repo-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--color-fg-muted);
+}
+
+.repo-stars,
+.repo-forks {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.repo-language {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  background: var(--color-neutral-muted);
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Placeholder State */
+.insights-placeholder {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--color-fg-muted);
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.insights-placeholder h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-fg-default);
+  font-weight: 600;
+}
+
+.insights-placeholder p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .insights-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .overview-card {
+    grid-column: 1;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .insight-card {
+    padding: 1.25rem;
+  }
+
+  .insights-title {
+    font-size: 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .top-repo-item {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .repo-rank {
+    align-self: flex-start;
+    font-size: 1.1rem;
+  }
+
+  .repo-name {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+
+  .repo-description {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .repo-stats {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-value {
+    font-size: 1.75rem;
+  }
+
+  .insight-card {
+    padding: 1rem;
+  }
+
+  .activity-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
