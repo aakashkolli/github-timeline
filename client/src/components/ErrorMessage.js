@@ -104,7 +104,6 @@ const ErrorMessage = ({ error, username, onRetry }) => {
             onClick={onRetry}
             className="retry-button"
           >
-            <span className="retry-icon">🔄</span>
             Try Again
           </button>
         )}
