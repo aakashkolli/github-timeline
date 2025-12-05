@@ -237,7 +237,6 @@ export async function findSimilarRepositories(repository, options = {}) {
     const results = await Promise.all(searchPromises);
     const allRepos = results.flatMap(result => result.items);
     
-    // Remove duplicates and user's own repos if requested
     const uniqueRepos = allRepos.filter((repo, index, arr) => {
       const isUnique = arr.findIndex(r => r.id === repo.id) === index;
       const isNotOwn = !excludeOwn || repo.id !== repository.id;
@@ -290,7 +289,6 @@ export async function getComprehensiveTrending(userLanguages = [], userTopics = 
     const results = await Promise.all(trendingPromises);
     const allTrending = results.flat();
     
-    // Remove duplicates and score
     const uniqueTrending = allTrending.filter((repo, index, arr) => 
       arr.findIndex(r => r.id === repo.id) === index
     );

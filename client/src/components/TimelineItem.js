@@ -4,7 +4,6 @@ import { LanguageIcon } from '../utils/languageIcons';
 import './TimelineItem.css';
 
 const TimelineItem = ({ repository, index, isEven, sortBy }) => {
-  // Removed unused isExpanded, setIsExpanded
   const [isVisible, setIsVisible] = useState(false);
   const [showTooltip, setShowTooltip] = useState('');
   const itemRef = useRef(null);
@@ -42,11 +41,8 @@ const TimelineItem = ({ repository, index, isEven, sortBy }) => {
     return formatDistanceToNow(date, { addSuffix: true });
   };
 
-  // Removed unused getLanguageColor
-
   const cleanDescription = (description) => {
     if (!description) return '';
-    // Remove problematic emojis that might not render well
     return description.replace(/📄|:page_facing_up:|📃|📋|📰|📄/g, '').trim();
   };
 
@@ -78,7 +74,7 @@ const TimelineItem = ({ repository, index, isEven, sortBy }) => {
         <div className="repo-card">
           <div className="repo-header">
             <div className="repo-title-section">
-              <h3 className="repo-name">
+              <h3 className="repo-title">
                 <a 
                   href={repository.html_url}
                   target="_blank"
@@ -104,14 +100,14 @@ const TimelineItem = ({ repository, index, isEven, sortBy }) => {
               </h3>
               <div className="repo-meta">
                 <div className="meta-item">
-                  <span className="meta-label">{dateLabel}:</span>
+                  <span className="meta-label">{dateLabel}: </span>
                   <span className="meta-value" title={formatDate(displayDate)}>
                     {getRelativeTime(displayDate)}
                   </span>
                 </div>
                 {sortBy === 'updated' && repository.created_at !== repository.updated_at && (
                   <div className="meta-item">
-                    <span className="meta-label">Created:</span>
+                    <span className="meta-label">Created: </span>
                     <span className="meta-value" title={formatDate(repository.created_at)}>
                       {getRelativeTime(repository.created_at)}
                     </span>
