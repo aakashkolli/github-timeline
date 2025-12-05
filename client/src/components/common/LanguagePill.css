@@ -1,0 +1,22 @@
+.language-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  background: var(--color-canvas-subtle);
+  border: 1px solid var(--color-border-muted);
+  border-radius: 16px;
+  font-size: 0.875rem;
+  color: var(--color-fg-default);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.language-pill:hover {
+  background: var(--color-canvas-default);
+  border-color: var(--color-border-default);
+}
+
+.language-name {
+  white-space: nowrap;
+}
