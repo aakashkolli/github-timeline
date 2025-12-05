@@ -1,6 +1,8 @@
 import { useState, useCallback } from 'react';
 import axios from 'axios';
 
+const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:5001';
+
 const useGitHub = () => {
   const [repositories, setRepositories] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -17,9 +19,8 @@ const useGitHub = () => {
     setRepositories([]);
 
     try {
-      // Use backend API base from environment variable
-      const apiBase = process.env.REACT_APP_API_BASE || 'http://localhost:5001';
-      const response = await axios.get(`${apiBase}/api/users/${username}/repos`);
+      // Use our backend proxy to fetch repositories
+  const response = await axios.get(`${API_BASE}/api/users/${username}/repos`);
       
       if (response.data.success) {
         const repos = response.data.data;

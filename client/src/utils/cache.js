@@ -1,6 +1,6 @@
 /**
  * Simple client-side cache implementation using localStorage
- * For static sites, this replaces server-side caching.
+ * Replaces server-side caching for static sites.
  */
 
 class ClientCache {
