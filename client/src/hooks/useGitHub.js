@@ -17,8 +17,9 @@ const useGitHub = () => {
     setRepositories([]);
 
     try {
-      // Use our backend proxy to fetch repositories
-      const response = await axios.get(`http://localhost:5001/api/users/${username}/repos`);
+      // Use backend API base from environment variable
+      const apiBase = process.env.REACT_APP_API_BASE || 'http://localhost:5001';
+      const response = await axios.get(`${apiBase}/api/users/${username}/repos`);
       
       if (response.data.success) {
         const repos = response.data.data;
