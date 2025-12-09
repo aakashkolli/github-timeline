@@ -189,6 +189,7 @@ const TopContributors = ({ repositories = [], username }) => {
           </p>
         </div>
         <div className="empty-state">
+          {/* Removed crane emoji */}
           <h4 className="empty-title">No Collaborative Repositories Found</h4>
           <p className="empty-description">
             {username}'s portfolio appears to consist mainly of personal projects or repositories 

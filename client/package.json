@@ -23,7 +23,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://aakashkolli.github.io/github-timeline",
+  "homepage": "https://kolli.github.io/github-timeline",
   "eslintConfig": {
     "extends": [
       "react-app",

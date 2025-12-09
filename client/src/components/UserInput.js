@@ -57,16 +57,6 @@ const UserInput = ({ onSubmit, initialValue = '', loading = false }) => {
         <p className="input-description">
           Discover the timeline of any GitHub user's public repositories
         </p>
-
-        <div style={{ marginBottom: '1rem', textAlign: 'center' }}>
-          <a
-            href={`${process.env.REACT_APP_API_BASE || ''}/auth/github`}
-            className="github-oauth-btn"
-            rel="noopener noreferrer"
-          >
-            <span style={{ marginRight: '0.5rem' }}>🔑</span>Sign in with GitHub
-          </a>
-        </div>
         
         <form onSubmit={handleSubmit} className="input-form">
           <div className="input-group">

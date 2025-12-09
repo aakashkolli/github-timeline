@@ -74,7 +74,7 @@ const TimelineItem = ({ repository, index, isEven, sortBy }) => {
         <div className="repo-card">
           <div className="repo-header">
             <div className="repo-title-section">
-              <h3 className="repo-name">
+              <h3 className="repo-title">
                 <a 
                   href={repository.html_url}
                   target="_blank"
