@@ -18,7 +18,7 @@
   align-items: start;
 }
 
-/* Left Column: Identity & Stats */
+/* Left Column - Identity & Stats */
 .profile-left {
   display: flex;
   flex-direction: column;
@@ -77,7 +77,6 @@
   letter-spacing: 0.02em;
 }
 
-/* Right Column: Stack & Focus */
 .profile-right {
   display: flex;
   flex-direction: column;
@@ -92,7 +91,6 @@
   letter-spacing: 0.02em;
 }
 
-/* Language Pills - Cloud of tags */
 .languages-section {
   display: flex;
   flex-direction: column;
@@ -134,7 +132,6 @@
   white-space: nowrap;
 }
 
-/* Focus Areas - Simple list */
 .focus-section {
   display: flex;
   flex-direction: column;

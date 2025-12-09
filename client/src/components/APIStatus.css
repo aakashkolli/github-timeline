@@ -19,8 +19,6 @@
   border-color: var(--color-border-default);
 }
 
-/* Removed pulse animation */
-
 .api-status-content {
   display: flex;
   flex-direction: column;

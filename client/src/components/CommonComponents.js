@@ -51,25 +51,8 @@ export const LoadingSpinner = () => (
 );
 
 export const ErrorMessage = ({ error, username, onRetry }) => {
-  const getErrorIcon = (errorType) => {
-    switch (errorType) {
-      case 'user_not_found':
-        return '🔍';
-      case 'rate_limit':
-        return '⏱️';
-      case 'network_error':
-        return '🌐';
-      case 'server_error':
-        return '🔧';
-      case 'no_repos':
-        return '📦';
-      default:
-        return '⚠️';
-    }
-  };
   return (
     <div className="error-message">
-      <span className="error-icon">{getErrorIcon(error?.type)}</span>
       <div className="error-details">
         <h3>Error</h3>
         <p>{error?.message}</p>

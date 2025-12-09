@@ -14,36 +14,15 @@ This project provides a fast, visual way to explore any GitHub user's public rep
 - Shareable URLs for easy sharing
 - Responsive design for all devices
 - Robust error handling for invalid users or API issues
+- Robust error handling for invalid users or API issues
+  Fast response times with backend caching (10-minute cache for user repository data)
+  Returns a list of public repositories for the given user. Results are cached for 10 minutes to improve performance and reduce GitHub API usage.
 
 ## Tech Stack
 
 - **Frontend:** React, JavaScript (ES6+), CSS (Grid/Flexbox), date-fns
 - **Backend:** Node.js, Express, GitHub REST API v3
 - **Tooling:** Create React App, ESLint, Concurrently
-
-## Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/github-timeline.git
-   cd github-timeline
-   ```
-2. **Install dependencies**
-   ```bash
-   npm run install:all
-   ```
-3. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Usage
-
-- Enter a GitHub username and generate a timeline.
-- Click repository names to visit them on GitHub.
-- Use the share button to copy a timeline URL.
-- Toggle dark/light mode as needed.
 
 ## API
 
@@ -144,59 +123,6 @@ GET /api/users/:username/repos
 
 ## Development
 
-### Project Structure
-
-```bash
-github-timeline/
-├── client/                    # React frontend application
-│   ├── public/
-│   │   ├── index.html
-│   │   ├── favicon.ico
-│   │   └── manifest.json
-│   ├── src/
-│   │   ├── components/        # Reusable UI components
-│   │   │   ├── DeveloperInsights/
-│   │   │   │   ├── DeveloperInsights.js
-│   │   │   │   ├── DeveloperInsights.css
-│   │   │   │   └── InsightsAnimations.css
-│   │   │   ├── InsightCard/
-│   │   │   │   ├── InsightCard.js
-│   │   │   │   └── InsightCard.css
-│   │   │   ├── Timeline.js
-│   │   │   ├── Timeline.css
-│   │   │   ├── TimelineItem.js
-│   │   │   ├── TimelineItem.css
-│   │   │   ├── UserInput.js
-│   │   │   ├── UserInput.css
-│   │   │   ├── ErrorMessage.js
-│   │   │   ├── ErrorMessage.css
-│   │   │   ├── LoadingSpinner.js
-│   │   │   ├── LoadingSpinner.css
-│   │   │   ├── ThemeToggle.js
-│   │   │   └── ThemeToggle.css
-│   │   ├── hooks/             # Custom React hooks
-│   │   │   └── useGitHub.js   # GitHub API integration
-│   │   ├── utils/             # Utility functions
-│   │   │   ├── repositoryAnalytics.js
-│   │   │   └── insightGenerator.js
-│   │   ├── App.js             # Main application component
-│   │   ├── App.css            # Application styles
-│   │   ├── index.js           # Application entry point
-│   │   ├── index.css          # Global styles
-│   │   └── reportWebVitals.js # Performance monitoring
-│   └── package.json           # Frontend dependencies
-├── server/                    # Express.js backend API
-│   ├── routes/
-│   │   └── github.js          # GitHub API endpoints
-│   ├── utils/
-│   │   └── cache.js           # In-memory caching
-│   ├── index.js               # Server entry point
-│   └── package.json           # Backend dependencies
-├── .gitignore                 # Git ignore rules
-├── README.md                  # Project documentation
-└── package.json               # Root project configuration
-```
-
 ### Available Scripts
 
 **Root Level:**
@@ -219,15 +145,32 @@ github-timeline/
 
 ### Environment Variables
 
-Create a `.env` file in the server directory:
+#### Backend (`server/.env`)
+
+Create a `.env` file in the `server/` directory with:
 
 ```env
-PORT=5000
-GITHUB_TOKEN=your_github_personal_access_token_here
-NODE_ENV=development
+PORT=5001
+NODE_ENV=production
+FRONTEND_URL=https://aakashkolli.github.io/
+GITHUB_TOKEN=your_github_token_here   # (optional, for higher rate limits)
 ```
 
-**Note**: While the GitHub token is optional for public repositories, it increases rate limits significantly.
+Replace `your_github_token_here` with your personal GitHub token.
+
+#### Frontend (`client/.env`)
+
+If deploying your backend to a public host (e.g., Render), create a `.env` file in the `client/` directory with:
+
+```env
+REACT_APP_API_BASE=https://your-backend-url.onrender.com
+```
+
+Replace with your actual backend URL.
+
+**Note:**
+
+- The `"proxy"` field in `client/package.json` is only for local development. In production, the frontend must use the public backend URL for API requests.
 
 ## Contributing
 

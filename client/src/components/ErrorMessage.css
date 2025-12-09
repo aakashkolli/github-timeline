@@ -99,15 +99,6 @@
   transform: translateY(-1px);
 }
 
-.retry-icon {
-  font-size: 1rem;
-  animation: rotate 0.5s ease-in-out;
-}
-
-.retry-button:hover .retry-icon {
-  animation: rotate 0.5s ease-in-out infinite;
-}
-
 @keyframes rotate {
   from {
     transform: rotate(0deg);
