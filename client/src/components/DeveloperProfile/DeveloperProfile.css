@@ -11,6 +11,133 @@
   max-width: 700px;
 }
 
+.modern-profile-card {
+  max-width: 480px;
+  margin: 2rem auto 2.5rem auto;
+  background: #181b20;
+  border-radius: 1.25rem;
+  border: 1.5px solid #23272e;
+  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.12);
+  padding: 2rem 2rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.modern-profile-card .relative {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.modern-profile-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2.5px solid #23272e;
+  background: #eaf1fa;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.10);
+}
+
+.modern-profile-card h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.modern-profile-card .profile-username-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.modern-profile-card .profile-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+.modern-profile-card .text-slate-500 {
+  color: #a1a1aa !important;
+  font-size: 1.1rem;
+  margin-left: 0;
+}
+.modern-profile-card p {
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.modern-profile-card .flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.modern-profile-card .flex-1 {
+  width: 100%;
+}
+.modern-profile-card .text-xs {
+  font-size: 0.85rem;
+  color: #a1a1aa;
+  margin-top: 0.5rem;
+}
+.modern-profile-card .font-mono {
+  font-family: 'JetBrains Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  color: #e5e7eb;
+}
+
+.profile-below-box {
+  max-width: 480px;
+  margin: 0 auto 2.5rem auto;
+  background: #16181d;
+  border-radius: 1rem;
+  border: 1px solid #23272e;
+  box-shadow: 0 1px 8px 0 rgba(0,0,0,0.08);
+  padding: 1.5rem 1.5rem 1.25rem 1.5rem;
+}
+
+.languages-section, .focus-section {
+  margin-bottom: 1.25rem;
+}
+.languages-section .language-pills {
+  margin-top: 0.5rem;
+}
+.focus-section .focus-list {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .modern-profile-card, .profile-below-box {
+    max-width: 98vw;
+    padding: 1rem 0.5rem;
+  }
+  .modern-profile-card img {
+    width: 80px;
+    height: 80px;
+  }
+}
+/* Developer Profile - Subtractive Design */
+.developer-profile {
+  background: var(--color-canvas-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--color-shadow-small);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
 .profile-container {
   display: grid;
   grid-template-columns: 1fr 1.5fr;

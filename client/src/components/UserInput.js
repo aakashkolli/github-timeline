@@ -55,7 +55,7 @@ const UserInput = ({ onSubmit, initialValue = '', loading = false }) => {
       <div className="user-input-content">
         <h2 className="input-title">Enter GitHub Username</h2>
         <p className="input-description">
-          Discover the timeline of any GitHub user's public repositories
+          Visualize any GitHub user's open-source journey and repository history
         </p>
         
         <form onSubmit={handleSubmit} className="input-form">
@@ -103,7 +103,7 @@ const UserInput = ({ onSubmit, initialValue = '', loading = false }) => {
           
           <div className="input-hints">
             <p className="hint">
-              <strong>Examples:</strong> octocat, torvalds, gaearon, sindresorhus
+              <strong>Examples:</strong> octocat, torvalds, 3b1b, karpathy
             </p>
             <p className="hint-note">
               Only public repositories will be displayed

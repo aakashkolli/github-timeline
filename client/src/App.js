@@ -9,12 +9,14 @@ import RepositoryInsights from './components/RepositoryInsights/RepositoryInsigh
 import DeveloperProfile from './components/DeveloperProfile/DeveloperProfile';
 import TopContributors from './components/TopContributors/TopContributors';
 import useGitHub from './hooks/useGitHub';
+import axios from 'axios';
 import './App.css';
 
 function App() {
   const [username, setUsername] = useState('');
   const [currentUser, setCurrentUser] = useState('');
   const [theme, setTheme] = useState('dark');
+  const [userProfile, setUserProfile] = useState(null);
   const { repositories, loading, error, fetchUserRepos } = useGitHub();
 
   useEffect(() => {
@@ -32,11 +34,24 @@ function App() {
   document.body.setAttribute('data-theme', 'dark');
   }, [fetchUserRepos]);
 
-  const handleUsernameSubmit = (submittedUsername) => {
+  const handleUsernameSubmit = async (submittedUsername) => {
     setUsername(submittedUsername);
     setCurrentUser(submittedUsername);
+    setUserProfile(null);
     fetchUserRepos(submittedUsername);
-    
+
+    // Fetch user profile from backend
+    try {
+      const res = await axios.get(`/api/users/${submittedUsername}`);
+      if (res.data && res.data.success) {
+        setUserProfile(res.data.data);
+      } else {
+        setUserProfile(null);
+      }
+    } catch (e) {
+      setUserProfile(null);
+    }
+
     // Update URL without refreshing the page
     const newUrl = new URL(window.location);
     newUrl.searchParams.set('user', submittedUsername);
@@ -121,6 +136,7 @@ function App() {
               <DeveloperProfile 
                 repositories={repositories}
                 username={currentUser}
+                userProfile={userProfile}
               />
             </section>
 
