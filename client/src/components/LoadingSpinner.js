@@ -37,7 +37,7 @@ const LoadingSpinner = () => {
       </div>
       
       <div className="loading-footer">
-        <p>This may take a few seconds (or more!) for users with many repositories</p>
+        <p>This may take a few seconds (or more!) for users with many repositories. You may need to reload the page.</p>
       </div>
     </div>
   );

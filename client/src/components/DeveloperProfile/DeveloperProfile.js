@@ -46,47 +46,27 @@ const DeveloperProfile = ({ repositories = [], username, userProfile }) => {
         </div>
 
         <div className="flex-1 text-center md:text-left">
-          <div className="profile-username-row">
+          <div className="profile-username-stack">
             <span className="profile-name">{userProfile.name}</span>
-            <span className="text-slate-500 text-xl font-normal">@{userProfile.login}</span>
+            <span className="profile-username">@{userProfile.login}</span>
           </div>
-          {userProfile.bio && <p className="text-slate-400 mb-4 max-w-2xl">{userProfile.bio}</p>}
+          {userProfile.bio && <p className="profile-bio">{userProfile.bio}</p>}
 
-          <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-slate-300">
+          <ul className="profile-stats-list minimal">
             {userProfile.location && (
-              <div className="flex items-center gap-1.5">
-                <span role="img" aria-label="location" className="text-emerald-400">📍</span>
-                <span>{userProfile.location}</span>
-              </div>
+              <li><span className="profile-stat-label">Location:</span> <span className="profile-stat-value">{userProfile.location}</span></li>
             )}
             {userProfile.blog && (
-              <a 
-                href={userProfile.blog.startsWith('http') ? userProfile.blog : `https://${userProfile.blog}`}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-1.5 hover:text-emerald-400 transition-colors"
-              >
-                <span role="img" aria-label="website" className="text-emerald-400">🔗</span>
-                <span>Website</span>
-              </a>
+              <li><span className="profile-stat-label">Website:</span> <a href={userProfile.blog.startsWith('http') ? userProfile.blog : `https://${userProfile.blog}`}
+                target="_blank" rel="noreferrer" className="profile-stat-link profile-stat-value">{userProfile.blog.replace(/^https?:\/\//, '')}</a></li>
             )}
-            <div className="flex items-center gap-1.5">
-              <span role="img" aria-label="followers" className="text-emerald-400">👥</span>
-              <span>{userProfile.followers} followers</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span role="img" aria-label="repos" className="text-emerald-400">📚</span>
-              <span>{userProfile.public_repos} public repos</span>
-            </div>
-          </div>
+            <li><span className="profile-stat-label">Followers:</span> <span className="profile-stat-value">{userProfile.followers}</span></li>
+            <li><span className="profile-stat-label">Public repos:</span> <span className="profile-stat-value">{userProfile.public_repos}</span></li>
+            <li className="profile-joined minimal"><span className="profile-stat-label">Joined:</span> <span className="profile-joined-date profile-stat-value">{new Date(userProfile.created_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</span></li>
+          </ul>
         </div>
 
-        <div className="text-xs text-slate-500 text-center md:text-right">
-          <div className="mb-1">Joined GitHub</div>
-          <div className="text-slate-300 font-mono">
-            {new Date(userProfile.created_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
-          </div>
-        </div>
+  {/* Removed duplicate join date section for minimalism */}
       </div>
 
       {/* Top languages and focus areas below the profile card */}
